@@ -39,7 +39,7 @@ body {
 
 #chat-box {
     margin-top: 10px;
-    height: 200px;  /* Increased height for better visibility */
+    height: 150px;  /* Reduced height for a more compact layout */
     overflow-y: auto;
     border: 1px solid #ccc;
     padding: 10px;
