@@ -11,13 +11,16 @@ app.use(express.static('public'));
 let currentNote = '';
 
 io.on('connection', (socket) => {
+    // Send the current note to newly connected clients
     socket.emit('noteUpdate', currentNote);
 
+    // Handle note changes
     socket.on('noteChange', (note) => {
         currentNote = note;
         socket.broadcast.emit('noteUpdate', currentNote);
     });
 
+    // Handle chat messages
     socket.on('chatMessage', (message) => {
         io.emit('chatMessage', message);
     });
