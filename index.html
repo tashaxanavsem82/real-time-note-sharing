@@ -10,11 +10,11 @@
     <div id="app">
         <h1>Real-Time Note Sharing</h1>
         <div id="note-editor">
-            <textarea placeholder="Type your notes here..." id="note-input"></textarea>
+            <textarea aria-label="Note input" placeholder="Type your notes here..." id="note-input"></textarea>
         </div>
         <div id="chat-area">
-            <input type="text" id="chat-input" placeholder="Chat...">
-            <div id="chat-box"></div>
+            <input type="text" id="chat-input" aria-label="Chat input" placeholder="Chat...">
+            <div id="chat-box" aria-label="Chat messages"></div>
         </div>
     </div>
     <script src="app.js"></script>
