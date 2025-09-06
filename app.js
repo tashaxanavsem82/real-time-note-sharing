@@ -5,13 +5,18 @@ const chatInput = document.getElementById('chat-input');
 const chatBox = document.getElementById('chat-box');
 
 // Handle note input change
+let currentNote = '';
 noteInput.addEventListener('input', () => {
-    socket.emit('noteChange', noteInput.value);
+    if (noteInput.value !== currentNote) {
+        currentNote = noteInput.value;
+        socket.emit('noteChange', currentNote);
+    }
 });
 
 // Update the note when received from other users
 socket.on('noteUpdate', (note) => {
     noteInput.value = note;
+    currentNote = note; // Update current note to match received note
 });
 
 // Handle chat input
